@@ -1,0 +1,150 @@
+// FOR OF ARRAY
+const characters = ["Frodo", "Harry", "Thanos", "Gandalf", "Yoda"];
+
+// Using For Loops
+for (let index = 0; index < characters.length; index++) {
+  const element = characters[index];
+  const elementUpperCase = characters[index].toUpperCase();
+  console.log(elementUpperCase);
+  console.log(element);
+}
+
+// For Of Loops
+for (const character of characters) {
+  console.log(character);
+  const characterUpperCase = character.toUpperCase();
+  console.log(characterUpperCase);
+}
+
+// FOR OF STRING
+const message = "Today is a wonderful day";
+
+for (const character of message) {
+  console.log(character);
+}
+
+// FOR OF MAP
+const myMap = new Map();
+
+myMap.set("fname", "Abdulquadri");
+myMap.set("lastname", "Akosile");
+myMap.set("age", 19);
+
+console.log(myMap);
+
+for (const item of myMap) {
+  console.log(item);
+  console.log(item[0], item[1]);
+  // The index 0 are the keys while the index 1 are the values
+}
+
+// FOR OFF SET
+const mySet = new Set();
+
+mySet.add("Abdulquadri");
+mySet.add("Akosile");
+mySet.add(19);
+
+console.log(mySet);
+
+for (const itemSet of mySet) {
+  console.log(itemSet);
+}
+
+// FOR OF OBJECT
+const stockItems = {
+  id: 54,
+  price: 1.32,
+  name: "Apple",
+  quantity: 6,
+};
+
+console.log(stockItems);
+for (const eachItems of Object.entries(stockItems)) {
+  console.log(eachItems);
+}
+
+const numbers = [10, 20, 40, 50, 20, 100];
+
+for (const num of numbers) {
+  const squredNum = num ** 2;
+  console.log(squredNum);
+}
+
+const age = [10, 42, 14, 22, 11, 74, 39, 2];
+
+const theObjectArray = [];
+
+const result = [];
+
+const anotherResult = [];
+
+for (let index = 0; index < age.length; index++) {
+  const element = age[index];
+  console.log(element);
+
+  const theObject = {
+    age: age[index],
+    name: "Dragon",
+  };
+
+  theObjectArray.push(theObject);
+}
+
+console.log(theObjectArray);
+
+for (const getAge of age) {
+  console.log(getAge);
+
+  result.push({ age: getAge, name: "Dragon" });
+
+  // Or we do this way
+  const dragonObject = {
+    age: getAge,
+    name: "Dragon",
+  };
+
+  anotherResult.push(dragonObject);
+}
+console.log(anotherResult);
+console.log(result);
+
+const names = new Set();
+
+const capsNames = new Set();
+
+names.add("Bilbo");
+names.add("Hermione");
+names.add("Spock");
+names.add("Leia");
+
+console.log(names);
+
+for (const name of names) {
+  capsNames.add(name.toUpperCase());
+}
+
+console.log(capsNames);
+
+const backpack = new Map();
+
+backpack.set(1, { name: "Sword", Value: 300 });
+backpack.set(2, { name: "Banana", Value: 5 });
+backpack.set(3, { name: "Gold Nugget", Value: 10000 });
+backpack.set(4, { name: "Pants", Value: 100 });
+
+let totalValue = 0;
+
+for (const item of backpack) {
+  const getId = item[0]; // Get the keys
+  const getItem = item[1]; // Get the values
+
+  console.log(getId);
+  console.log(getItem);
+  console.log(`${getItem.name}: $${getItem.Value}`);
+
+  totalValue += getItem.Value;
+}
+
+console.log(`The Final Value: $${totalValue}`);
+console.log(backpack);
